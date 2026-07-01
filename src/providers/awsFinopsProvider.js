@@ -144,7 +144,6 @@ class AwsFinOpsProvider extends FinOpsProviderInterface {
 
   async getRecommendations(costMetricsString) {
     const aiServiceUrl = process.env.AI_SERVICE_URL || 'http://ai-service:3000';
-    const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
     
     let recommendationText = 'Consolidate workloads and enable scaling limits.';
     try {
